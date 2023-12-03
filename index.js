@@ -93,7 +93,7 @@ app.post('/register/usuario', (req, res) => {
             const cpf = result[0].USU_CPF;
             const nomeCompleto =result[0].USU_NOME;
             const primeiroNome = nomeCompleto.split(' ')[0];
-          const token = jwt.sign({ email: email ,nome: primeiroNome,nomeC:nomeCompleto,cpf: cpf}, 'rcfapgplpbaww', { expiresIn: '1h' });    
+          const token = jwt.sign({ email: email ,nome: primeiroNome,nomeC:nomeCompleto,id: cpf}, 'rcfapgplpbaww', { expiresIn: '1h' });    
           res.json({ msg: 'Usuário está logado', token });
         } else {
           res.status(401).json({ msg: 'Senha incorreta' });
@@ -161,7 +161,7 @@ app.post('/register/empresa', (req, res) => {
             const cnpj =result[0].EMP_CNPJ;
             const nomeCompleto =result[0].EMP_NOME;
             const primeiroNome = nomeCompleto.split(' ')[0];
-          const token = jwt.sign({ email: email ,nome: primeiroNome, nomeC: nomeCompleto,cnpj: cnpj }, 'rcfapgplpbaww', { expiresIn: '1h' });    
+          const token = jwt.sign({ email: email ,nome: primeiroNome, nomeC: nomeCompleto,id: cnpj }, 'rcfapgplpbaww', { expiresIn: '1h' });    
           res.json({ msg: 'Usuário está logado', token });
         } else {
           res.status(401).json({ msg: 'Senha incorreta' });
@@ -231,7 +231,7 @@ app.post('/register/artesao', (req, res) => {
             const primeiroNome = nomeCompleto.split(' ')[0];
          
          
-          const token = jwt.sign( { email: email, nome: primeiroNome ,nomeC:nomeCompleto , cpf: cpf } , 'rcfapgplpbaww', { expiresIn: '1h' });    
+          const token = jwt.sign( { email: email, nome: primeiroNome ,nomeC:nomeCompleto , id: cpf } , 'rcfapgplpbaww', { expiresIn: '1h' });    
           res.json({ msg: 'Usuário está logado', token });
         } else {
           res.status(401).json({ msg: 'Senha incorreta' });
