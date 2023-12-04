@@ -6,6 +6,11 @@ const bcrypt = require('bcrypt');//utilizada pra criptografar a senha
 const saltRounds= 10;//parametro fornecido pelo bcrypt em teoria quanto mais alto o numero mais segurança e dificil de calcular o hash /bliboetca*
 const jwt = require('jsonwebtoken');//pra gerar o token que é fornecida ao logar    
 
+
+
+console.log("dsdsdsadasds")
+
+
 //variavel db que recebe o parametro createPoll pra fazer a conexão com seu banco de dados
 const db = mysql.createPool({
    host: 'localhost', 
@@ -263,7 +268,6 @@ app.post('/register/artesao', (req, res) => {
     }
   });
 });
-
 
 
 
