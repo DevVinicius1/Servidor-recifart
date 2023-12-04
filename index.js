@@ -25,25 +25,7 @@ app.use(express.json());
 app.use(cors()); //cors é usado para correção de possiveis erros encontrado no projeto
 
 
-//verifica a autenticidade dos tokens nas requisições
-const verifyToken = (req, res, next) => {
-  const token = req.headers.authorization; //obtem o token jwt
-   
-  //verifica se o token foi passado na requisição
-  if (!token) {
-    return res.status(403).json({ msg: 'Token não fornecido' });
-  }
 
-  //verifica a validade do token ai divide a string no espaço e pega a 2 parte que é o token real
-  jwt.verify(token.split(' ')[1], 'rcfapgplpbaww', (err, decoded) => {
-    if (err) {
-      return res.status(401).json({ msg: 'Token inválido' });
-    }
-
-    req.user = decoded; //se for valido o usuario recebe um token decodificado que tem a suas informações
-    next();//função que se tudo for valido para para o proximo midleware que no caso é um responsavel por request e respostas
-  });
-};
 
 
 
