@@ -7,10 +7,6 @@ const saltRounds= 10;//parametro fornecido pelo bcrypt em teoria quanto mais alt
 const jwt = require('jsonwebtoken');//pra gerar o token que é fornecida ao logar    
 
 
-
-console.log("dsdsdsadasds")
-
-
 //variavel db que recebe o parametro createPoll pra fazer a conexão com seu banco de dados
 const db = mysql.createPool({
    host: 'localhost', 
@@ -73,7 +69,7 @@ app.post('/register/usuario', (req, res) => {
      }
    });
  });
- 
+
 
  app.post('/login/usuario', (req,res) => {
   const email = req.body.email;
