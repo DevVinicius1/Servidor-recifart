@@ -73,7 +73,7 @@ app.post('/register/usuario', (req, res) => {
      }
    });
  });
-
+ 
 
  app.post('/login/usuario', (req,res) => {
   const email = req.body.email;
