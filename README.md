@@ -1,2 +1,2 @@
-# Serivdor-recifart
+# Servidor-recifart
 servidor do projeto recifartt
